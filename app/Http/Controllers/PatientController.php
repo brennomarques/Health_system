@@ -45,4 +45,24 @@ class PatientController extends Controller
 
     }
 
+    function editPatient($id){
+        $patient = Patient::find($id);
+
+        if (!$patient){
+            return redirect()->back();
+        }
+
+        return view('patient.editPatient',compact('patient'));
+    }
+
+    function updatePatient(updateAndCreate $payload , $id) {
+        $response = Patient::find($id);
+
+        if (!$response){
+            return redirect()->back();
+        }
+
+        $response->update($payload->all());
+        return redirect()->route("listPatient")->with('messages',"O artigo ##{$id} foi alterado com sucesso!");
+    }
 }
