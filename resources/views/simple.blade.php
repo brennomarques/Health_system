@@ -10,19 +10,24 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <link rel="shortcut icon" href="{{{ asset('img/logo.png') }}}">
+
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-light navbar-expand-lg " style="background-color: #e3f2fd;">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Sistema de saúde</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="{{route('dashboard')}}">
+                <img src="{{{ asset('img/icon.png') }}}" class="d-inline-block align-text-top">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-          </button>
+            </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Médicos</a>
+                <a class="nav-link" href="{{route('listDoctor')}}">Médicos</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Doadores</a>
@@ -44,6 +49,10 @@
                 <a class="nav-link" href="{{route('listPatient')}}">Pacientes</a>
               </li>
 
+              <li class="nav-item">
+                <a class="nav-link" href="">Relatório</a>
+              </li>
+
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Menu
@@ -52,7 +61,9 @@
                     <li><a class="dropdown-item" href="{{route('listPatient')}}">Listar Pacientes</a></li>
                     <li><a class="dropdown-item" href="{{route('newPatient')}}">Cadastar Paciente</a></li>
                     <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Médicos</a></li>
+                    <li><a class="dropdown-item" href="{{route('listDoctor')}}">Médicos</a></li>
+                    <li><a class="dropdown-item" href="{{route('newDoctor')}}">Cadastrar médico</a></li>
+                    <li><hr class="dropdown-divider"></li>
                     <li><a class="dropdown-item" href="#">Doadores</a></li>
                     <li><hr class="dropdown-divider"></li>
                     <li><a class="dropdown-item" href="#">Banco de sangue</a></li>
@@ -60,13 +71,11 @@
                     <li><a class="dropdown-item" href="#">Doações</a></li>
                 </ul>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Dashboard</a>
-              </li>
+
             </ul>
             <form class="d-flex">
               <input class="form-control me-2" type="search" placeholder="Pesquise algo" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Pesquisar</button>
+              <button class="btn btn-outline-primary" type="submit">Pesquisar</button>
             </form>
           </div>
         </div>
