@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\{DoctorController, PatientController};
+use App\Http\Controllers\{BloodBankController, DoctorController, PatientController, DonationController};
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,3 +33,19 @@ Route::post('/medico', [DoctorController::class, 'createDoctor'])->name('createD
 Route::delete('/medico/{id}', [DoctorController::class, 'deleteDoctor'])->name('deleteDoctor');
 Route::get('/medico/editar/{id}', [DoctorController::class, 'editDoctor'])->name('editDoctor');
 Route::put('/medico/{id}', [DoctorController::class, 'updateDoctor'])->name('updateDoctor');
+
+Route::get('/bancodesangue',[BloodBankController::class,'list'])->name('listBloodBank');
+Route::get('/bancodesangue/criar', [BloodBankController::class, 'new'])->name('newBloodBank');
+Route::get('/bancodesangue/{id}', [BloodBankController::class, 'search'])->name('searchBloodBank');
+Route::post('/bancodesangue', [BloodBankController::class, 'create'])->name('createBloodBank');
+Route::get('/bancodesangue/editar/{id}',[BloodBankController::class,'edit'])->name('editBloodBank');
+Route::delete('/bancodesangue/{id}',[BloodBankController::class,'delete'])->name('deleteBloodBank');
+Route::put('/bancodesangue/{id}',[BloodBankController::class,'update'])->name('updateBloodBank');
+
+Route::get('/doacao',[DonationController::class,'list'])->name('listDonation');
+Route::get('/doacao/criar', [DonationController::class, 'new'])->name('newDonation');
+Route::get('/doacao/{id}', [DonationController::class, 'search'])->name('searchDonation');
+Route::post('/doacao', [DonationController::class, 'create'])->name('createDonation');
+Route::get('/doacao/editar/{id}',[DonationController::class,'edit'])->name('editDonation');
+Route::delete('/doacao/{id}',[DonationController::class,'delete'])->name('deleteDonation');
+Route::put('/doacao/{id}',[DonationController::class,'update'])->name('updateDonation');
