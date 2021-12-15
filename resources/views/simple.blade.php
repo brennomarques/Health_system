@@ -34,7 +34,7 @@
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="#">Banco de sangue</a>
+                <a class="nav-link" href="{{route("listBloodBank")}}">Banco de sangue</a>
               </li>
 
               <li class="nav-item">
@@ -42,7 +42,7 @@
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="#">Doações</a>
+                <a class="nav-link" href="{{route("listDonation")}}">Doações</a>
               </li>
 
               <li class="nav-item">
@@ -70,8 +70,9 @@
                     <li><a class="dropdown-item" href="{{route('listDonor')}}">Listar doadores</a></li>
                     <li><a class="dropdown-item" href="{{route('newDonor')}}">Cadastrar novo doador</a></li>
                     <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Banco de sangue</a></li>
-                    <li><a class="dropdown-item" href="#">Doações</a></li>
+                    <li><a class="dropdown-item" href="{{route("listBloodBank")}}">Banco de sangue</a></li>
+                    <li><a class="dropdown-item" href="#">Estagiários</a></li>
+                    <li><a class="dropdown-item" href="{{route('listDonation')}}">Doações</a></li>
                 </ul>
               </li>
 
