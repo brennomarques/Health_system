@@ -47,9 +47,6 @@
                             <button type="submit" class="btn btn-outline-danger"><i class="fa fa-trash-alt"></i></button>
                         </form>
                     </td>
-                    <td>
-                        <a href="{{route('editPatient', $list->id)}}"><button type="submit" class="btn btn-outline-warning"><i class="fa fa-trash-alt"></i></button></a>
-                    </td>
                 </tbody>
             @endforeach
         </table>

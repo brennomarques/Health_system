@@ -20,8 +20,6 @@ Route::get('/', function () {
 
 Route::get('/paciente', [PatientController::class, 'listPatients'])->name('listPatient');
 Route::get('/paciente/criar', [PatientController::class, 'newPatient'])->name('newPatient');
-Route::get('/paciente/atualizar/{id}', [PatientController::class, 'editPatient'])->name('editPatient');
-Route::put('/paciente/{id}', [PatientController::class, 'updatePatient'])->name('updatePatient');
 Route::get('/paciente/{id}', [PatientController::class, 'searchPatient'])->name('searchPatient');
 Route::post('/paciente', [PatientController::class, 'createPatient'])->name('createPatient');
 Route::delete('/paciente/{id}', [PatientController::class, 'deletePatient'])->name('deletePatient');
