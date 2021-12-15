@@ -38,7 +38,7 @@ class DoctorController extends Controller
         $response = Doctor::find($id);
 
         if (!$response){
-            return redirect()->route('listPatient');
+            return redirect()->route('listDoctor');
         }
 
         $response->delete();

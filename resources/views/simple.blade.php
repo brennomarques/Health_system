@@ -30,7 +30,7 @@
                 <a class="nav-link" href="{{route('listDoctor')}}">Médicos</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Doadores</a>
+                <a class="nav-link" href="{{route('listDonor')}}">Doadores</a>
               </li>
 
               <li class="nav-item">
@@ -38,7 +38,7 @@
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="#">Estagiários</a>
+                <a class="nav-link" href="{{route('listTrainee')}}">Estagiários</a>
               </li>
 
               <li class="nav-item">
@@ -58,16 +58,19 @@
                   Menu
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="{{route('listPatient')}}">Listar Pacientes</a></li>
-                    <li><a class="dropdown-item" href="{{route('newPatient')}}">Cadastar Paciente</a></li>
+                    <li><a class="dropdown-item" href="{{route('listPatient')}}">Listar pacientes</a></li>
+                    <li><a class="dropdown-item" href="{{route('newPatient')}}">Cadastar paciente</a></li>
                     <li><hr class="dropdown-divider"></li>
                     <li><a class="dropdown-item" href="{{route('listDoctor')}}">Médicos</a></li>
                     <li><a class="dropdown-item" href="{{route('newDoctor')}}">Cadastrar médico</a></li>
                     <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Doadores</a></li>
+                    <li><a class="dropdown-item" href="{{route('listTrainee')}}">Estagiários</a></li>
+                    <li><a class="dropdown-item" href="{{route('newTreinee')}}">Cadastrar novo estagiário</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="{{route('listDonor')}}">Listar doadores</a></li>
+                    <li><a class="dropdown-item" href="{{route('newDonor')}}">Cadastrar novo doador</a></li>
                     <li><hr class="dropdown-divider"></li>
                     <li><a class="dropdown-item" href="#">Banco de sangue</a></li>
-                    <li><a class="dropdown-item" href="#">Estagiários</a></li>
                     <li><a class="dropdown-item" href="#">Doações</a></li>
                 </ul>
               </li>

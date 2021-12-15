@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\{DoctorController, PatientController};
+use App\Http\Controllers\{DoctorController, DonorController, PatientController, TraineeController};
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,3 +33,19 @@ Route::post('/medico', [DoctorController::class, 'createDoctor'])->name('createD
 Route::delete('/medico/{id}', [DoctorController::class, 'deleteDoctor'])->name('deleteDoctor');
 Route::get('/medico/editar/{id}', [DoctorController::class, 'editDoctor'])->name('editDoctor');
 Route::put('/medico/{id}', [DoctorController::class, 'updateDoctor'])->name('updateDoctor');
+
+Route::get('/estagiario', [TraineeController::class, 'listTrainee'])->name('listTrainee');
+Route::get('/estagiario/criar', [TraineeController::class, 'newTreinee'])->name('newTreinee');
+Route::post('/estagiario', [TraineeController::class, 'createTreinee'])->name('createTreinee');
+Route::get('/estagiario/{id}', [TraineeController::class, 'searchTrainee'])->name('searchTrainee');
+Route::delete('/estagiario/{id}', [TraineeController::class, 'deleteTreinee'])->name('deleteTreinee');
+Route::get('/estagiario/editar/{id}', [TraineeController::class, 'editTreinee'])->name('editTreinee');
+Route::put('/estagiario/{id}', [TraineeController::class, 'updateTreinee'])->name('updateTreinee');
+
+Route::get('/doador', [DonorController::class, 'listDonor'])->name('listDonor');
+Route::get('/doador/criar', [DonorController::class, 'newDonor'])->name('newDonor');
+Route::post('/doador', [DonorController::class, 'createDonor'])->name('createDonor');
+Route::get('/doador/{id}', [DonorController::class, 'searchDonor'])->name('searchDonor');
+Route::get('/doador/editar/{id}', [DonorController::class, 'editDonor'])->name('editDonor');
+Route::put('/doador/{id}', [DonorController::class, 'updateDonor'])->name('updateDonor');
+Route::delete('/doador/{id}', [DonorController::class, 'deleteDonor'])->name('deleteDonor');
