@@ -49,8 +49,21 @@
                 <a class="nav-link" href="{{route('listPatient')}}">Pacientes</a>
               </li>
 
-              <li class="nav-item">
-                <a class="nav-link" href="">Relatório</a>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="report" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Relatórios
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="report">
+                    <li><a class="dropdown-item" href="{{route('reportDoctor')}}">Médicos</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="{{route('reportTreinee')}}">Estagiários</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="{{route('reportDonation')}}">Doações</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="">Banco de sangue</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="">Doadores</a></li>
+                </ul>
               </li>
 
               <li class="nav-item dropdown">
@@ -71,8 +84,10 @@
                     <li><a class="dropdown-item" href="{{route('newDonor')}}">Cadastrar novo doador</a></li>
                     <li><hr class="dropdown-divider"></li>
                     <li><a class="dropdown-item" href="{{route("listBloodBank")}}">Banco de sangue</a></li>
-                    <li><a class="dropdown-item" href="#">Estagiários</a></li>
+                    <li><a class="dropdown-item" href="{{route("newBloodBank")}}">Cadastar novo sangue</a></li>
+                    <li><hr class="dropdown-divider"></li>
                     <li><a class="dropdown-item" href="{{route('listDonation')}}">Doações</a></li>
+                    <li><a class="dropdown-item" href="{{route('newDonation')}}">Cadastrar Doações</a></li>
                 </ul>
               </li>
 

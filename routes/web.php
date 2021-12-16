@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\{BloodBankController, DoctorController, DonorController, PatientController, TraineeController, DonationController};
+use App\Http\Controllers\{BloodBankController, DoctorController, DonorController, PatientController, TraineeController, DonationController, Report};
 
 use Illuminate\Support\Facades\Route;
 
@@ -66,3 +66,8 @@ Route::get('/doador/{id}', [DonorController::class, 'searchDonor'])->name('searc
 Route::get('/doador/editar/{id}', [DonorController::class, 'editDonor'])->name('editDonor');
 Route::put('/doador/{id}', [DonorController::class, 'updateDonor'])->name('updateDonor');
 Route::delete('/doador/{id}', [DonorController::class, 'deleteDonor'])->name('deleteDonor');
+
+Route::get('/relatorio/administrativo/medicos', [Report::class, 'reportDoctor'])->name('reportDoctor');
+Route::get('/relatorio/administrativo/estagiario', [Report::class, 'reportTreinee'])->name('reportTreinee');
+
+Route::get('/relatorio/doacao', [Report::class, 'reportDonation'])->name('reportDonation');

@@ -29,8 +29,9 @@
                 <th scope="col">E-mail</th>
                 <th scope="col">Ação</th>
             </thead>
-            @foreach ($donors as $donor)
-                <tbody>
+            <tbody>
+                @foreach ($donors as $donor)
+                <tr>
                     <th scope="row">{{$donor->id}}</th>
                     <td>{{$donor->name}}</td>
                     <td>{{$donor->phone}}</td>
@@ -45,8 +46,9 @@
                             <button type="submit" class="btn btn-outline-danger"><i class="fa fa-trash-alt"></i></button>
                         </form>
                     </td>
-                </tbody>
-            @endforeach
+                </tr>
+                @endforeach
+            </tbody>
         </table>
     </div>
 

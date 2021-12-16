@@ -27,8 +27,9 @@
                 <th scope="col">Nome</th>
                 <th scope="col">Número de telefone</th>
             </thead>
-            @foreach ($donations as $donation)
-                <tbody>
+            <tbody>
+                @foreach ($donations as $donation)
+                <tr>
                     <th scope="row">{{$donation->id}}</th>
                     <td>{{$donation->name}}</td>
                     <td>{{$donation->phoneNumber}}</td>
@@ -44,8 +45,9 @@
                             <button type="submit" class="btn btn-outline-danger"><i class="fa fa-trash-alt"></i></button>
                         </form>
                     </td>
-                </tbody>
-            @endforeach
+                </tr>
+                 @endforeach
+            </tbody>
         </table>
 
         <div class="d-flex justify-content-center mt-5 mb-5">

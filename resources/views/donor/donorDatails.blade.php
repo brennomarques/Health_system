@@ -29,8 +29,8 @@
                         <td>{{$donor['email']}}</td>
                         <td>{{$donor['Weight']}}</td>
                         <td>{{$donor['height']}}</td>
-                        <td>{{$donor['smoker']}}</td>
-                        <td>{{$donor['disease']}}</td>
+                        <td>{{$donor['smoker'] ? 'Sim' : 'Não'}}</td>
+                        <td>{{$donor['disease'] ? 'Sim' : 'Não'}}</td>
                         <td>{{$donor['note']}}</td>
 
                         <td>

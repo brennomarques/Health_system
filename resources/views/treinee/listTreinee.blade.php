@@ -28,23 +28,25 @@
                 <th scope="col">Educação escolar</th>
                 <th scope="col">Ação</th>
             </thead>
-            @foreach ($treinees as $treinee)
-                <tbody>
-                    <th scope="row">{{$treinee->id}}</th>
-                    <td>{{$treinee->name}}</td>
-                    <td>{{$treinee->school_education}}</td>
-                    <td width="10"><a href="{{route('searchTrainee', $treinee->id)}}" class="btn btn-outline-primary" title="Ver detalhes"><i class="fa fa-eye"></i></a></td>
-                    <td width="10"><a href="{{route('editTreinee', $treinee->id)}}" class="btn btn-outline-success" title="Ver detalhes"><i class="far fa-edit"></i></i></a></td>
+            <tbody>
+                @foreach ($treinees as $treinee)
+                    <tr>
+                        <th scope="row">{{$treinee->id}}</th>
+                        <td>{{$treinee->name}}</td>
+                        <td>{{$treinee->school_education}}</td>
+                        <td width="10"><a href="{{route('searchTrainee', $treinee->id)}}" class="btn btn-outline-primary" title="Ver detalhes"><i class="fa fa-eye"></i></a></td>
+                        <td width="10"><a href="{{route('editTreinee', $treinee->id)}}" class="btn btn-outline-success" title="Ver detalhes"><i class="far fa-edit"></i></i></a></td>
 
-                    <td width="10">
-                        <form action="{{route('deleteTreinee', $treinee->id)}}" method="post">
-                            @csrf
-                            <input type="hidden" name="_method" value="delete">
-                            <button type="submit" class="btn btn-outline-danger"><i class="fa fa-trash-alt"></i></button>
-                        </form>
-                    </td>
-                </tbody>
-            @endforeach
+                        <td width="10">
+                            <form action="{{route('deleteTreinee', $treinee->id)}}" method="post">
+                                @csrf
+                                <input type="hidden" name="_method" value="delete">
+                                <button type="submit" class="btn btn-outline-danger"><i class="fa fa-trash-alt"></i></button>
+                            </form>
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
         </table>
     </div>
 

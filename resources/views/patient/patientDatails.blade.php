@@ -29,8 +29,8 @@
                         <td>{{$patient['age']}}</td>
                         <td>{{$patient['address']}}</td>
                         <td>{{$patient['phone']}}</td>
-                        <td>{{$patient['email']}}</td>
-                        <td>{{$patient['is_donor']}}</td>
+                        <td>{{$patient['email']}}</td>ç
+                        <td>{{$patient['is_donor'] ? 'Sim' : 'Não'}}</td>
                         <td>{{$patient['created_at']}}</td>
 
                         <td>

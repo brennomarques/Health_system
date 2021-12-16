@@ -31,26 +31,28 @@
                 <th scope="col">Data da Criação</th>
                 <th scope="col">Ação</th>
             </thead>
-            @foreach ($patients as $list)
-                <tbody>
-                    <th scope="row">{{$list->id}}</th>
-                    <td>{{$list->name}}</td>
-                    <td>{{$list->last_name}}</td>
-                    <td>{{$list->age}}</td>
-                    <td>{{$list->email}}</td>
-                    <td>{{$list->created_at}}</td>
-                    <td width="10"><a href="{{route('searchPatient', $list->id)}}" class="btn btn-outline-primary" title="Ver detalhes"><i class="fa fa-eye"></i></a></td>
-                    <td width="10"><a href="{{route('editPatient', $list->id)}}" class="btn btn-outline-success" title="Ver detalhes"><i class="far fa-edit"></i></i></a></td>
+            <tbody>
+                @foreach ($patients as $list)
+                    <tr>
+                        <th scope="row">{{$list->id}}</th>
+                        <td>{{$list->name}}</td>
+                        <td>{{$list->last_name}}</td>
+                        <td>{{$list->age}}</td>
+                        <td>{{$list->email}}</td>
+                        <td>{{$list->created_at}}</td>
+                        <td width="10"><a href="{{route('searchPatient', $list->id)}}" class="btn btn-outline-primary" title="Ver detalhes"><i class="fa fa-eye"></i></a></td>
+                        <td width="10"><a href="{{route('editPatient', $list->id)}}" class="btn btn-outline-success" title="Ver detalhes"><i class="far fa-edit"></i></i></a></td>
 
-                    <td width="10">
-                        <form action="{{route('deletePatient', $list->id)}}" method="post">
-                            @csrf
-                            <input type="hidden" name="_method" value="delete">
-                            <button type="submit" class="btn btn-outline-danger"><i class="fa fa-trash-alt"></i></button>
-                        </form>
-                    </td>
+                        <td width="10">
+                            <form action="{{route('deletePatient', $list->id)}}" method="post">
+                                @csrf
+                                <input type="hidden" name="_method" value="delete">
+                                <button type="submit" class="btn btn-outline-danger"><i class="fa fa-trash-alt"></i></button>
+                            </form>
+                        </td>
+                    </tr>
+                @endforeach
                 </tbody>
-            @endforeach
         </table>
     </div>
 

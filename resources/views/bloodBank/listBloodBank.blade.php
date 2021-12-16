@@ -27,25 +27,27 @@
                 <th scope="col">Tipo</th>
                 <th scope="col">Compatibilidade</th>
             </thead>
-            @foreach ($bloods as $blood)
-                <tbody>
-                    <th scope="row">{{$blood->id}}</th>
-                    <td>{{$blood->type}}</td>
-                    <td>{{$blood->compatibility}}</td>
+            <tbody>
+                @foreach ($bloods as $blood)
+                    <tr>
+                        <th scope="row">{{$blood->id}}</th>
+                        <td>{{$blood->type}}</td>
+                        <td>{{$blood->compatibility}}</td>
 
-                    <td width="10"><a href="{{route('searchBloodBank', $blood->id)}}" class="btn btn-outline-primary" title="Ver detalhes"><i class="fa fa-eye"></i></a></td>
+                        <td width="10"><a href="{{route('searchBloodBank', $blood->id)}}" class="btn btn-outline-primary" title="Ver detalhes"><i class="fa fa-eye"></i></a></td>
 
-                    <td width="10"><a href="{{route('editBloodBank', $blood->id)}}" class="btn btn-outline-success" title="Ver detalhes"><i class="far fa-edit"></i></i></a></td>
+                        <td width="10"><a href="{{route('editBloodBank', $blood->id)}}" class="btn btn-outline-success" title="Ver detalhes"><i class="far fa-edit"></i></i></a></td>
 
-                    <td width="10">
-                        <form action="{{route('deleteBloodBank', $blood->id)}}" method="post">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-outline-danger"><i class="fa fa-trash-alt"></i></button>
-                        </form>
-                    </td>
-                </tbody>
-            @endforeach
+                        <td width="10">
+                            <form action="{{route('deleteBloodBank', $blood->id)}}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-outline-danger"><i class="fa fa-trash-alt"></i></button>
+                            </form>
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
         </table>
 
         <div class="d-flex justify-content-center mt-5 mb-5">
