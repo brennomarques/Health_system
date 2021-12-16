@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\{BloodBankController, DoctorController, DonorController, PatientController, TraineeController, DonationController, Report};
+use App\Http\Controllers\{BloodBankController, DoctorController, DonorController, PatientController, TraineeController, DonationController, ReportController};
 
 use Illuminate\Support\Facades\Route;
 
@@ -15,8 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('dashboard', 'dashboard/dashboard')->name('dashboard');
-// Route::get('/dashboard', [DashboardController::class, 'generalSearch'])->name('dashboard');
+// Route::view('dashboard', 'dashboard/dashboard')->name('dashboard');
+Route::get('/dashboard', [ReportController::class, 'reportDashboard'])->name('dashboard');
 Route::redirect('/', 'dashboard', 301);
 
 Route::get('/paciente', [PatientController::class, 'listPatients'])->name('listPatient');
@@ -67,7 +67,8 @@ Route::get('/doador/editar/{id}', [DonorController::class, 'editDonor'])->name('
 Route::put('/doador/{id}', [DonorController::class, 'updateDonor'])->name('updateDonor');
 Route::delete('/doador/{id}', [DonorController::class, 'deleteDonor'])->name('deleteDonor');
 
-Route::get('/relatorio/administrativo/medicos', [Report::class, 'reportDoctor'])->name('reportDoctor');
-Route::get('/relatorio/administrativo/estagiario', [Report::class, 'reportTreinee'])->name('reportTreinee');
-
-Route::get('/relatorio/doacao', [Report::class, 'reportDonation'])->name('reportDonation');
+Route::get('/relatorio/administrativo/medicos', [ReportController::class, 'reportDoctor'])->name('reportDoctor');
+Route::get('/relatorio/administrativo/estagiario', [ReportController::class, 'reportTreinee'])->name('reportTreinee');
+Route::get('/relatorio/doacao', [ReportController::class, 'reportDonation'])->name('reportDonation');
+Route::get('/relatorio/sangue', [ReportController::class, 'reportBloodBank'])->name('reportBloodBank');
+Route::get('/relatorio/doador', [ReportController::class, 'reportDonor'])->name('reportDonor');
